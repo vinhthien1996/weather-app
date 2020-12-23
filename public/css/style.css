@@ -1,0 +1,374 @@
+/* http://openweathermap.org/img/wn/03d@2x.png */
+/* How many degrees Celsius is 500 K?
+
+C = 500 - 273.15
+500 K = 226.85 C
+
+Let's convert normal body temperature from Kelvin to Celsius. Human body temperature is 310.15 K. Put the value into the equation to solve for degrees Celsius:
+
+C = K - 273.15
+C = 310.15 - 273.15
+Human body temperature = 37 C */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap");
+/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap'); */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  /* font-family: 'Noto Sans JP', sans-serif; */
+}
+
+body {
+  background-image: url("../img/bg2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* body {
+  background: linear-gradient(60deg, #aaa, #eee);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+} */
+
+.weather__container {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+/* SEARCH */
+
+.search-container {
+  color: #fff;
+  padding: 0px 20px;
+  position: relative;
+}
+
+.input-search {
+  width: 100%;
+  padding: 10px;
+  padding-right: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fbcb4f;
+  transition: border 0.3s ease-in-out;
+}
+
+.input-search:hover {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.input-search:focus {
+  outline: none;
+}
+
+.input-search::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.search-btn {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: transparent;
+  color: #fff;
+}
+
+/* CARD */
+
+.card__container {
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.card__content {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* CARD TOP */
+
+.card__top {
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card__top__left {
+  width: 33%;
+}
+
+.card-city {
+  padding: 5px 40px 5px 30px;
+  border-radius: 0 20px 20px 0;
+  font-size: 24px;
+  margin: 0;
+  font-weight: 400;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  left: 0;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: transparent;
+  color: #fbcb4f;
+}
+
+.card-label {
+  border-left: 1px solid #9da7ef;
+  padding-left: 5px;
+  margin: 0;
+  margin-top: 50px;
+  
+}
+
+.card-clock {
+  border-left: 1px solid #fbcb4f;
+  padding-left: 5px;
+}
+
+.card-des {
+  border-left: 1px solid #68d8ee;
+  padding-left: 5px;
+}
+
+.card__top__center {
+  width: 34%;
+  text-align: center;
+  height: 140px;
+}
+
+.card__top__center img {
+  margin-top: -25px;
+  animation: motionImg 7s infinite ease-in-out;
+}
+
+@keyframes motionImg {
+  0% {
+    transform: translateX(10px);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  75% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+}
+
+.card__top__right {
+  width: 33%;
+  text-align: right;
+}
+
+.card__top img {
+}
+
+.card__top h3 {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.weather-c {
+  margin-top: 15px;
+}
+
+.weather-c h3 {
+  font-weight: 300;
+  font-size: 60px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  padding: 0;
+  margin: 0;
+}
+
+.weather-c p {
+  font-size: 16px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* END CARD TOP */
+
+/* CARD BOTOM */
+
+.card__bottom {
+  padding: 10px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.mini-card {
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.mini-card:last-child {
+  border-right: transparent;
+}
+
+.mini-time {
+  padding: 0;
+  margin: 0;
+  color: #ddd;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.mini-img {
+  height: 70px;
+}
+
+.mini-img img {
+  margin-top: -15px;
+}
+
+.mini-temp {
+  color: #ddd;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+/* END CARD BOTTOM */
+
+/* POPUP */
+
+.popup-container {
+  padding: 0 20px;
+  animation: animationPopup 1s forwards;
+  opacity: 0;
+}
+
+@keyframes animationPopup {
+  0% {opacity: 0; transform: scale(0.5)}
+  20% {opacity: 0; transform: scale(0.5)}
+  40% {opacity: 0; transform: scale(0.5)}
+  80% {opacity: 1; transform: scale(1.05)}
+  100% {opacity: 1; transform: scale(1)}
+}
+
+.popup-content {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+.popup-icon {
+  width: 80px;
+  height: 70px;
+}
+
+.popup-icon img {
+  margin: -15px 0 0 -15px;
+}
+
+.popup-message {
+  width: 100%;
+  padding: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.popup-message p {
+  padding: 0;
+  margin: 0;
+}
+
+.popup-close {
+  font-size: 12px;
+  color: #fff;
+}
+
+.popup-close i {
+  cursor: pointer;
+}
+
+.container-loading {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+  animation: loading 3s 1 ease-out;
+}
+
+.container-loading img {
+  width: 400px;
+}
+
+.search-loading {
+  background: #fff;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+  animation: ef-search-loading 3s 1 ease-out;
+}
+
+.search-loading img {
+  width: 400px;
+}
+
+@keyframes ef-search-loading {
+  0% {opacity: 0.5; transform: scale(1)}
+  20% {opacity: 0.5; transform: scale(1)}
+  40% {opacity: 0.5; transform: scale(1)}
+  60% {opacity: 0.5; transform: scale(1)}
+  80% {opacity: 0.5; transform: scale(1)}
+  100% {opacity: 0; transform: scale(1.2)}
+}
+
+@keyframes loading {
+  0% {opacity: 1; transform: scale(1)}
+  20% {opacity: 1; transform: scale(1)}
+  40% {opacity: 1; transform: scale(1)}
+  60% {opacity: 1; transform: scale(1)}
+  80% {opacity: 1; transform: scale(1)}
+  100% {opacity: 0; transform: scale(1.2)}
+}
+
+.temp-span {
+  cursor: pointer;
+  color: #bbbbbb;
+}
+
+.temp-span-active{
+  cursor: pointer;
+  color: #ffffff;
+}

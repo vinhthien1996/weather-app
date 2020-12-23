@@ -1,0 +1,158 @@
+@media only screen and (max-width: 1024px) {
+  .weather__container {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .weather__container {
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .search-container {
+    color: #fff;
+    padding: 10px 10px 0px 10px;
+  }
+
+  .weather__container {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .card__container {
+    color: #fff;
+    padding: 10px 10px;
+  }
+
+  .card__top {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card__top__left {
+    width: 100%;
+  }
+
+  .card__top__center,
+  .card__top__right {
+    width: 50%;
+  }
+
+  .card__top__center {
+    height: 100px;
+    margin-top: 10px;
+  }
+
+  .card__top__center img {
+    animation: none;
+  }
+
+  .card__top__right {
+    height: 100px;
+    margin-top: 20px;
+  }
+
+  .card__top__center img {
+    width: 150px;
+  }
+
+  .card__top__left {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .card-city {
+    padding: 10px;
+    margin: 0;
+    border-radius: 0;
+    text-align: center;
+    background-color: transparent;
+    position: initial;
+    box-shadow: none;
+    border: transparent;
+    color: #fbcb4f;
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+
+  .card-label {
+    padding-top: 5px;
+    margin: 0;
+    border-left: none;
+    border-top: 2px solid #9da7ef;
+    text-align: center;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .card-clock {
+    padding-top: 5px;
+    border-left: none;
+    border-top: 2px solid #fbcb4f;
+    text-align: center;
+    padding-left: 5px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+  .card-date {
+    display: none;
+  }
+
+  .card-des {
+    padding-top: 5px;
+    border-top: 2px solid #68d8ee;
+    border-left: none;
+    text-align: center;
+    padding-left: 5px;
+    grid-column-start: 3;
+    grid-column-end: 4;
+  }
+
+  .weather-c {
+    text-align: center;
+  }
+
+  .weather-c h3 {
+    font-size: 30px;
+  }
+
+  .mini-time, .mini-temp {
+    font-size: 12px;
+  }
+
+  .mini-img {
+    margin-top: 10px;
+  }
+
+  .mini-img img {
+    width: 100%;
+  }
+
+  .popup-container {
+    padding: 0 10px;
+  }
+  .search-btn {
+    margin-top: 5px;
+    margin-right: -15px;
+  }
+  .popup-content {
+    padding: 10px 10px 5px 10px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .mini-temp {
+    color: #ddd;
+    font-weight: 400;
+    margin-top: -25px;
+  }
+}
