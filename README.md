@@ -6,4 +6,4 @@
 <br/>- HTML5
 <br/>- CSS3
 <br/>- JAVASCRIPT
-<img src="./screen.png" />
+<img src="./public/screen.png" />
